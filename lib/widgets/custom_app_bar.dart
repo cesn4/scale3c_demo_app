@@ -4,29 +4,34 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   final Size preferredSize;
 
-  CustomAppBar() : preferredSize = Size.fromHeight(60.0);
+  CustomAppBar() : preferredSize = Size.fromHeight(100.0);
   Widget build(BuildContext context) {
-    return AppBar(
-      toolbarHeight: 100,
-      backgroundColor: Colors.white,
-      leading: IconButton(
-        iconSize: 30.0,
-        color: Colors.black,
-        icon: const Icon(Icons.menu),
-        onPressed: () {
-          print('hello');
-        },
-      ),
-      actions: <Widget>[
-        IconButton(
-          color: Colors.black,
-          iconSize: 30.0,
-          icon: const Icon(Icons.notifications_active),
-          onPressed: () {
-            print('hello');
-          },
+    return Container(
+      color: Colors.amber,
+      child: SafeArea(
+        child: Container(
+          height: 80.0,
+          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 0.00),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                iconSize: 30.0,
+                color: Colors.black,
+                icon: Icon(Icons.menu),
+                onPressed: () => print('hello'),
+              ),
+              IconButton(
+                iconSize: 30.0,
+                color: Colors.black,
+                icon: Icon(Icons.notifications),
+                onPressed: () => print('hello'),
+              ),
+            ],
+          ),
         ),
-      ],
+      ),
     );
   }
 }
