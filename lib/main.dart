@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scale3c_demo_app/views/home_view.dart';
+import 'package:scale3c_demo_app/scale3c_demo_app.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,11 +11,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: HomeView()
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      //   visualDensity: VisualDensity.adaptivePlatformDensity,
+      // ),
+      initialRoute: Routes.mainScreenRoute,
+      routes: {
+        Routes.mainScreenRoute: (context) => MainScreen(),
+        Routes.addScreenRoute: (context) => AddScreen(),
+      },
     );
   }
 }

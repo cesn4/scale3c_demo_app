@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:scale3c_demo_app/scale3c_demo_app.dart';
-import 'package:scale3c_demo_app/views/home_view.dart';
 
 class CardItem extends StatelessWidget {
   CardItem({

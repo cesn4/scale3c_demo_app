@@ -20,7 +20,7 @@ class ListItem extends StatelessWidget {
     return Container(
         margin: EdgeInsets.symmetric(
             vertical: ThemeSpacing.mini, horizontal: ThemeSpacing.large),
-        height: 100.0,
+        height: ThemeSize.large,
         decoration: BoxDecoration(
             color: color.withOpacity(0.3),
             borderRadius: ThemeBorderRadius.primary,
