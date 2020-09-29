@@ -1,65 +1,75 @@
 import 'package:flutter/material.dart';
-import 'package:scale3c_demo_app/mocks/images_list.dart';
+import 'package:scale3c_demo_app/scale3c_demo_app.dart';
+import 'package:scale3c_demo_app/views/home_view.dart';
 
 class CardItem extends StatelessWidget {
+  CardItem({
+    @required this.label,
+    @required this.text,
+    @required this.color,
+    @required this.teamList,
+  });
+
+  final List<String> teamList;
+  final Color color;
+  final String label;
+  final String text;
+
   @override
   Widget build(BuildContext context) {
     double viewWidth = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.all(10.0),
+      margin: EdgeInsets.all(ThemeSpacing.small),
       width: viewWidth * 0.7,
-      padding: EdgeInsets.fromLTRB(30.0, 0, 30.0, 0),
+      padding: EdgeInsets.symmetric(horizontal: ThemeSpacing.extra),
       decoration: BoxDecoration(
-          color: Colors.amber,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black12,
-              blurRadius: 5.0,
-              spreadRadius: 1.0,
-              offset: Offset(
-                5.0,
-                5.0,
-              ),
-            )
-          ],
-          borderRadius: BorderRadius.all(Radius.circular(30.0))),
+          color: color.withOpacity(0.5),
+          boxShadow: [ThemeShadow.secondary],
+          borderRadius: ThemeBorderRadius.secondary),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            margin: EdgeInsets.only(bottom: 10.0),
+            margin: EdgeInsets.only(bottom: ThemeSpacing.medium),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Skills and more',
+                  label,
                   style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 30.0,
+                    color: ThemeCustomColor.dark,
+                    fontWeight: FontWeight.bold,
+                    fontSize: ThemeFontSize.large,
                   ),
                 ),
                 Text(
-                  'Design power and kit',
+                  text,
                   style: TextStyle(
-                    color: Colors.black38,
-                    fontSize: 15.0,
+                    color: ThemeCustomColor.dark,
+                    fontSize: ThemeFontSize.small,
                   ),
                 ),
               ],
             ),
           ),
           LimitedBox(
-            maxHeight: 40,
+            maxHeight: ThemeSize.small,
             child: Stack(
-              children: imageList.asMap().entries.map((image) {
-                double position = image.key.toDouble() * 28.0;
+              children: teamList.asMap().entries.map((image) {
+                double position = image.key.toDouble() * 32.0;
                 return Positioned(
                   left: position,
-                  child: (CircleAvatar(
-                    backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage(image.value),
-                  )),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: ThemeCustomColor.light,
+                        )),
+                    child: (CircleAvatar(
+                      backgroundImage: NetworkImage(image.value),
+                    )),
+                  ),
                 );
               }).toList(),
             ),

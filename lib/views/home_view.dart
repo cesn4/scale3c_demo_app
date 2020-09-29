@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scale3c_demo_app/mocks/images_list.dart';
 import 'package:scale3c_demo_app/scale3c_demo_app.dart';
 
 class HomeView extends StatelessWidget {
@@ -10,42 +11,67 @@ class HomeView extends StatelessWidget {
           scrollDirection: Axis.vertical,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+              padding: EdgeInsets.symmetric(
+                  horizontal: ThemeSpacing.extra, vertical: ThemeSpacing.large),
               child: Text(
                 'Recent Projects',
-                style: TextStyle(color: Colors.black38, fontSize: 15.0),
+                style: TextStyle(
+                    color: ThemeCustomColor.dark,
+                    fontSize: ThemeFontSize.small),
               ),
             ),
             Container(
-              height: 220.0,
+              height: ThemeSize.extra,
               child: ListView(
-                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                padding: EdgeInsets.symmetric(horizontal: ThemeSpacing.small),
                 scrollDirection: Axis.horizontal,
                 children: [
-                  CardItem(),
-                  CardItem(),
-                  CardItem(),
-                  CardItem(),
-                  CardItem(),
+                  CardItem(
+                    label: 'Skills and more',
+                    text: 'Design power and kits',
+                    color: Colors.blueGrey,
+                    teamList: imageList,
+                  ),
+                  CardItem(
+                    label: 'Skills and more',
+                    text: 'Design power and kits',
+                    color: Colors.pinkAccent,
+                    teamList: imageList,
+                  ),
                 ],
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+              padding: EdgeInsets.symmetric(
+                  horizontal: ThemeSpacing.extra, vertical: ThemeSpacing.large),
               child: Text(
                 'Recent Assigned',
-                style: TextStyle(color: Colors.black38, fontSize: 15.0),
+                style: TextStyle(
+                    color: ThemeCustomColor.dark,
+                    fontSize: ThemeFontSize.small),
               ),
             ),
-            ListItem(),
-            ListItem(),
-            ListItem(),
-            ListItem(),
-            ListItem(),
-            ListItem(),
-            ListItem(),
-            ListItem(),
-            ListItem(),
+            ListItem(
+              color: Colors.teal,
+              label: 'Create Unity',
+              text: 'Guidelines',
+              date: 'Tomorrow',
+              active: true,
+            ),
+            ListItem(
+              color: Colors.orange,
+              label: 'Design Web',
+              text: 'Guideliness',
+              date: 'Sep 31',
+              active: false,
+            ),
+            ListItem(
+              color: Colors.blue,
+              label: 'Design Web',
+              text: 'Guideliness',
+              date: 'Sep 31',
+              active: false,
+            ),
           ],
         ),
         bottomNavigationBar: CustomAppNavigation());

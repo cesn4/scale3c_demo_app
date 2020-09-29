@@ -1,23 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:scale3c_demo_app/scale3c_demo_app.dart';
 
 class ListItem extends StatelessWidget {
+  ListItem(
+      {@required this.label,
+      @required this.text,
+      @required this.date,
+      @required this.color,
+      @required this.active});
+
+  final Color color;
+  final String label;
+  final String date;
+  final String text;
+  final bool active;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+        margin: EdgeInsets.symmetric(
+            vertical: ThemeSpacing.mini, horizontal: ThemeSpacing.large),
         height: 100.0,
         decoration: BoxDecoration(
-            color: Colors.teal,
-            borderRadius: BorderRadius.all(Radius.circular(20.0)),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black12,
-                blurRadius: 5.0,
-                spreadRadius: 3.0,
-              )
-            ]),
+            color: color.withOpacity(0.3),
+            borderRadius: ThemeBorderRadius.primary,
+            boxShadow: [ThemeShadow.primary]),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+          padding: EdgeInsets.symmetric(
+              horizontal: ThemeSpacing.extra, vertical: ThemeSpacing.large),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,32 +35,39 @@ class ListItem extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                      padding: EdgeInsets.all(15.0),
-                      margin: EdgeInsets.only(right: 20.0),
+                      padding: EdgeInsets.all(ThemeSpacing.medium),
+                      margin: EdgeInsets.only(right: ThemeSpacing.large),
                       decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(30.0))),
+                          color: color,
+                          borderRadius: ThemeBorderRadius.secondary),
                       child: Icon(
-                        Icons.check,
-                        color: Colors.white,
+                        active ? Icons.check : Icons.watch_later,
+                        color: ThemeCustomColor.light,
                       )),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Create Unity',
-                        style: TextStyle(fontSize: 20.0),
+                        label,
+                        style: TextStyle(
+                            fontSize: ThemeFontSize.medium, color: color),
                       ),
-                      Text('Guidelines')
+                      Text(
+                        text,
+                        style: TextStyle(
+                            fontSize: ThemeFontSize.small, color: color),
+                      )
                     ],
                   )
                 ],
               ),
               Text(
-                'Tomorrow',
-                style: TextStyle(fontSize: 15.0),
+                date,
+                style: TextStyle(
+                    fontSize: ThemeFontSize.small,
+                    color: color,
+                    fontWeight: FontWeight.bold),
               )
             ],
           ),
