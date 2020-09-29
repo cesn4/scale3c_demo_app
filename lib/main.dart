@@ -9,7 +9,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Scale3C Demo',
       initialRoute: Routes.mainScreenRoute,
       routes: {
         Routes.mainScreenRoute: (context) => MainScreen(),
