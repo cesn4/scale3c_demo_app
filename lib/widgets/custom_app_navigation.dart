@@ -6,7 +6,7 @@ class CustomAppNavigation extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 0.00),
       height: 80.0,
-      color: Colors.amber,
+      color: Colors.white10,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
