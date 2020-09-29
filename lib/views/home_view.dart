@@ -8,15 +8,7 @@ class HomeView extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.vertical,
         children: [
-          Container(
-            padding: EdgeInsets.symmetric(
-                horizontal: ThemeSpacing.extra, vertical: ThemeSpacing.large),
-            child: Text(
-              'Recent Projects',
-              style: TextStyle(
-                  color: ThemeCustomColor.dark, fontSize: ThemeFontSize.small),
-            ),
-          ),
+          SectionTitle(label: 'Recent Projects'),
           Container(
             height: ThemeSize.extra,
             child: ListView(
@@ -38,15 +30,7 @@ class HomeView extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            padding: EdgeInsets.symmetric(
-                horizontal: ThemeSpacing.extra, vertical: ThemeSpacing.large),
-            child: Text(
-              'Recent Assigned',
-              style: TextStyle(
-                  color: ThemeCustomColor.dark, fontSize: ThemeFontSize.small),
-            ),
-          ),
+          SectionTitle(label: 'Recently assigned'),
           ListItem(
             color: Colors.teal,
             label: 'Create Unity',

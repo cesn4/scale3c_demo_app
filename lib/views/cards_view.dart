@@ -8,15 +8,7 @@ class CardsView extends StatelessWidget {
         child: ListView(
       scrollDirection: Axis.vertical,
       children: [
-        Container(
-          padding: EdgeInsets.symmetric(
-              horizontal: ThemeSpacing.extra, vertical: ThemeSpacing.large),
-          child: Text(
-            'Projects',
-            style: TextStyle(
-                color: ThemeCustomColor.dark, fontSize: ThemeFontSize.small),
-          ),
-        ),
+        SectionTitle(label: 'Projects'),
         Container(
           height: ThemeSize.extra,
           child: ListView(
@@ -38,15 +30,7 @@ class CardsView extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-          padding: EdgeInsets.symmetric(
-              horizontal: ThemeSpacing.extra, vertical: ThemeSpacing.large),
-          child: Text(
-            'Better Projects',
-            style: TextStyle(
-                color: ThemeCustomColor.dark, fontSize: ThemeFontSize.small),
-          ),
-        ),
+        SectionTitle(label: 'Better Projects'),
         Container(
           height: ThemeSize.extra,
           child: ListView(
@@ -68,15 +52,7 @@ class CardsView extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-          padding: EdgeInsets.symmetric(
-              horizontal: ThemeSpacing.extra, vertical: ThemeSpacing.large),
-          child: Text(
-            'Projects again?',
-            style: TextStyle(
-                color: ThemeCustomColor.dark, fontSize: ThemeFontSize.small),
-          ),
-        ),
+        SectionTitle(label: 'Projects again?'),
         Container(
           height: ThemeSize.extra,
           child: ListView(

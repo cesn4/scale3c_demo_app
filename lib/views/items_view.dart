@@ -8,15 +8,7 @@ class ItemsView extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.vertical,
         children: [
-          Container(
-            padding: EdgeInsets.symmetric(
-                horizontal: ThemeSpacing.extra, vertical: ThemeSpacing.large),
-            child: Text(
-              'Just Items',
-              style: TextStyle(
-                  color: ThemeCustomColor.dark, fontSize: ThemeFontSize.small),
-            ),
-          ),
+          SectionTitle(label: 'Just Items'),
           ListItem(
             color: Colors.teal,
             label: 'Create Unity',
