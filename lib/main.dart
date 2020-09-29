@@ -11,11 +11,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MainScreen()
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      //   visualDensity: VisualDensity.adaptivePlatformDensity,
+      // ),
+      initialRoute: Routes.mainScreenRoute,
+      routes: {
+        Routes.mainScreenRoute: (context) => MainScreen(),
+        Routes.addScreenRoute: (context) => AddScreen(),
+      },
     );
   }
 }

@@ -25,7 +25,9 @@ class _MainScreenState extends State<MainScreen> {
         buttons: [
           NavigationButton(
             icon: Icon(Icons.add),
-            onPressed: () => {},
+            onPressed: () => {
+              Navigator.pushNamed(context, Routes.addScreenRoute)
+            },
             active: false,
           ),
           NavigationButton(
