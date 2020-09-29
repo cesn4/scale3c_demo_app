@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scale3c_demo_app/mocks/images_list.dart';
 import 'package:scale3c_demo_app/scale3c_demo_app.dart';
 
 class HomeView extends StatelessWidget {
@@ -22,11 +23,18 @@ class HomeView extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 10.0),
                 scrollDirection: Axis.horizontal,
                 children: [
-                  CardItem(),
-                  CardItem(),
-                  CardItem(),
-                  CardItem(),
-                  CardItem(),
+                  CardItem(
+                    label: 'Skills and more',
+                    text: 'Design power and kits',
+                    color: Colors.blueGrey,
+                    teamList: imageList,
+                  ),
+                  CardItem(
+                    label: 'Skills and more',
+                    text: 'Design power and kits',
+                    color: Colors.pinkAccent,
+                    teamList: imageList,
+                  ),
                 ],
               ),
             ),

@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:scale3c_demo_app/mocks/images_list.dart';
 
 class CardItem extends StatelessWidget {
+  CardItem({
+    @required this.label,
+    @required this.text,
+    @required this.color,
+    @required this.teamList,
+  });
+
+  final List<String> teamList;
+  final Color color;
+  final String label;
+  final String text;
+
   @override
   Widget build(BuildContext context) {
     double viewWidth = MediaQuery.of(context).size.width;
@@ -10,7 +21,7 @@ class CardItem extends StatelessWidget {
       width: viewWidth * 0.7,
       padding: EdgeInsets.fromLTRB(30.0, 0, 30.0, 0),
       decoration: BoxDecoration(
-          color: Colors.amber,
+          color: color.withOpacity(0.5),
           boxShadow: [
             BoxShadow(
               color: Colors.black12,
@@ -28,21 +39,22 @@ class CardItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            margin: EdgeInsets.only(bottom: 10.0),
+            margin: EdgeInsets.only(bottom: 15.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Skills and more',
+                  label,
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.black87,
+                    fontWeight: FontWeight.bold,
                     fontSize: 30.0,
                   ),
                 ),
                 Text(
-                  'Design power and kit',
+                  text,
                   style: TextStyle(
-                    color: Colors.black38,
+                    color: Colors.black54,
                     fontSize: 15.0,
                   ),
                 ),
@@ -50,16 +62,22 @@ class CardItem extends StatelessWidget {
             ),
           ),
           LimitedBox(
-            maxHeight: 40,
+            maxHeight: 42,
             child: Stack(
-              children: imageList.asMap().entries.map((image) {
-                double position = image.key.toDouble() * 28.0;
+              children: teamList.asMap().entries.map((image) {
+                double position = image.key.toDouble() * 32.0;
                 return Positioned(
                   left: position,
-                  child: (CircleAvatar(
-                    backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage(image.value),
-                  )),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.white,
+                        )),
+                    child: (CircleAvatar(
+                      backgroundImage: NetworkImage(image.value),
+                    )),
+                  ),
                 );
               }).toList(),
             ),
