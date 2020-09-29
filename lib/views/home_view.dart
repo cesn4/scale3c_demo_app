@@ -11,16 +11,19 @@ class HomeView extends StatelessWidget {
           scrollDirection: Axis.vertical,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+              padding: EdgeInsets.symmetric(
+                  horizontal: ThemeSpacing.extra, vertical: ThemeSpacing.large),
               child: Text(
                 'Recent Projects',
-                style: TextStyle(color: Colors.black38, fontSize: 15.0),
+                style: TextStyle(
+                    color: ThemeCustomColor.dark,
+                    fontSize: ThemeFontSize.small),
               ),
             ),
             Container(
-              height: 220.0,
+              height: ThemeSize.extra,
               child: ListView(
-                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                padding: EdgeInsets.symmetric(horizontal: ThemeSpacing.small),
                 scrollDirection: Axis.horizontal,
                 children: [
                   CardItem(
@@ -39,10 +42,13 @@ class HomeView extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+              padding: EdgeInsets.symmetric(
+                  horizontal: ThemeSpacing.extra, vertical: ThemeSpacing.large),
               child: Text(
                 'Recent Assigned',
-                style: TextStyle(color: Colors.black38, fontSize: 15.0),
+                style: TextStyle(
+                    color: ThemeCustomColor.dark,
+                    fontSize: ThemeFontSize.small),
               ),
             ),
             ListItem(

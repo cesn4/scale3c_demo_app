@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scale3c_demo_app/scale3c_demo_app.dart';
 
 class ListItem extends StatelessWidget {
   ListItem(
@@ -17,20 +18,16 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+        margin: EdgeInsets.symmetric(
+            vertical: ThemeSpacing.mini, horizontal: ThemeSpacing.large),
         height: 100.0,
         decoration: BoxDecoration(
             color: color.withOpacity(0.3),
-            borderRadius: BorderRadius.all(Radius.circular(20.0)),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black12,
-                blurRadius: 5.0,
-                spreadRadius: 3.0,
-              )
-            ]),
+            borderRadius: ThemeBorderRadius.primary,
+            boxShadow: [ThemeShadow.primary]),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+          padding: EdgeInsets.symmetric(
+              horizontal: ThemeSpacing.extra, vertical: ThemeSpacing.large),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,15 +35,14 @@ class ListItem extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                      padding: EdgeInsets.all(15.0),
-                      margin: EdgeInsets.only(right: 20.0),
+                      padding: EdgeInsets.all(ThemeSpacing.medium),
+                      margin: EdgeInsets.only(right: ThemeSpacing.large),
                       decoration: BoxDecoration(
                           color: color,
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(30.0))),
+                          borderRadius: ThemeBorderRadius.secondary),
                       child: Icon(
                         active ? Icons.check : Icons.watch_later,
-                        color: Colors.white,
+                        color: ThemeCustomColor.light,
                       )),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,11 +50,13 @@ class ListItem extends StatelessWidget {
                     children: [
                       Text(
                         label,
-                        style: TextStyle(fontSize: 20.0, color: color),
+                        style: TextStyle(
+                            fontSize: ThemeFontSize.medium, color: color),
                       ),
                       Text(
                         text,
-                        style: TextStyle(fontSize: 15.0, color: color),
+                        style: TextStyle(
+                            fontSize: ThemeFontSize.small, color: color),
                       )
                     ],
                   )
@@ -67,7 +65,9 @@ class ListItem extends StatelessWidget {
               Text(
                 date,
                 style: TextStyle(
-                    fontSize: 15.0, color: color, fontWeight: FontWeight.bold),
+                    fontSize: ThemeFontSize.small,
+                    color: color,
+                    fontWeight: FontWeight.bold),
               )
             ],
           ),
