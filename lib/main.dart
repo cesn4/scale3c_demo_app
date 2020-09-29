@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scale3c_demo_app/views/home_view.dart';
+import 'package:scale3c_demo_app/scale3c_demo_app.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomeView()
+      home: MainScreen()
     );
   }
 }
