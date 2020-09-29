@@ -12,46 +12,12 @@ class HomeView extends StatelessWidget {
           Container(
             height: ThemeSize.extra,
             child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: ThemeSpacing.small),
-              scrollDirection: Axis.horizontal,
-              children: [
-                CardItem(
-                  label: 'Skills and more',
-                  text: 'Design power and kits',
-                  color: Colors.blueGrey,
-                  teamList: imageList,
-                ),
-                CardItem(
-                  label: 'Skills and more',
-                  text: 'Design power and kits',
-                  color: Colors.pinkAccent,
-                  teamList: imageList,
-                ),
-              ],
-            ),
+                padding: EdgeInsets.symmetric(horizontal: ThemeSpacing.small),
+                scrollDirection: Axis.horizontal,
+                children: cardList),
           ),
           SectionTitle(label: 'Recently assigned'),
-          ListItem(
-            color: Colors.teal,
-            label: 'Create Unity',
-            text: 'Guidelines',
-            date: 'Tomorrow',
-            active: true,
-          ),
-          ListItem(
-            color: Colors.orange,
-            label: 'Design Web',
-            text: 'Guideliness',
-            date: 'Sep 31',
-            active: false,
-          ),
-          ListItem(
-            color: Colors.blue,
-            label: 'Design Web',
-            text: 'Guideliness',
-            date: 'Sep 31',
-            active: false,
-          ),
+          ...barList
         ],
       ),
     );
