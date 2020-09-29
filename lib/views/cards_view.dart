@@ -14,20 +14,7 @@ class CardsView extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.symmetric(horizontal: ThemeSpacing.small),
             scrollDirection: Axis.horizontal,
-            children: [
-              CardItem(
-                label: 'Skills and more',
-                text: 'Design power and kits',
-                color: Colors.blueGrey,
-                teamList: imageList,
-              ),
-              CardItem(
-                label: 'Skills and more',
-                text: 'Design power and kits',
-                color: Colors.pinkAccent,
-                teamList: imageList,
-              ),
-            ],
+            children: cardList
           ),
         ),
         SectionTitle(label: 'Better Projects'),
@@ -36,20 +23,7 @@ class CardsView extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.symmetric(horizontal: ThemeSpacing.small),
             scrollDirection: Axis.horizontal,
-            children: [
-              CardItem(
-                label: 'Skills and more',
-                text: 'Design power and kits',
-                color: Colors.blueGrey,
-                teamList: imageList,
-              ),
-              CardItem(
-                label: 'Skills and more',
-                text: 'Design power and kits',
-                color: Colors.pinkAccent,
-                teamList: imageList,
-              ),
-            ],
+            children: cardList
           ),
         ),
         SectionTitle(label: 'Projects again?'),
@@ -58,20 +32,7 @@ class CardsView extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.symmetric(horizontal: ThemeSpacing.small),
             scrollDirection: Axis.horizontal,
-            children: [
-              CardItem(
-                label: 'Skills and more',
-                text: 'Design power and kits',
-                color: Colors.blueGrey,
-                teamList: imageList,
-              ),
-              CardItem(
-                label: 'Skills and more',
-                text: 'Design power and kits',
-                color: Colors.pinkAccent,
-                teamList: imageList,
-              ),
-            ],
+            children: cardList
           ),
         ),
       ],

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scale3c_demo_app/scale3c_demo_app.dart';
 
-class ListItem extends StatelessWidget {
-  ListItem(
+class BarItem extends StatelessWidget {
+  BarItem(
       {@required this.label,
       @required this.text,
       @required this.date,
