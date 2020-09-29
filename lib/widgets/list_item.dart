@@ -1,13 +1,26 @@
 import 'package:flutter/material.dart';
 
 class ListItem extends StatelessWidget {
+  ListItem(
+      {@required this.label,
+      @required this.text,
+      @required this.date,
+      @required this.color,
+      @required this.active});
+
+  final Color color;
+  final String label;
+  final String date;
+  final String text;
+  final bool active;
+
   @override
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
         height: 100.0,
         decoration: BoxDecoration(
-            color: Colors.teal,
+            color: color.withOpacity(0.3),
             borderRadius: BorderRadius.all(Radius.circular(20.0)),
             boxShadow: [
               BoxShadow(
@@ -28,11 +41,11 @@ class ListItem extends StatelessWidget {
                       padding: EdgeInsets.all(15.0),
                       margin: EdgeInsets.only(right: 20.0),
                       decoration: BoxDecoration(
-                          color: Colors.black,
+                          color: color,
                           borderRadius:
                               BorderRadius.all(Radius.circular(30.0))),
                       child: Icon(
-                        Icons.check,
+                        active ? Icons.check : Icons.watch_later,
                         color: Colors.white,
                       )),
                   Column(
@@ -40,17 +53,21 @@ class ListItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Create Unity',
-                        style: TextStyle(fontSize: 20.0),
+                        label,
+                        style: TextStyle(fontSize: 20.0, color: color),
                       ),
-                      Text('Guidelines')
+                      Text(
+                        text,
+                        style: TextStyle(fontSize: 15.0, color: color),
+                      )
                     ],
                   )
                 ],
               ),
               Text(
-                'Tomorrow',
-                style: TextStyle(fontSize: 15.0),
+                date,
+                style: TextStyle(
+                    fontSize: 15.0, color: color, fontWeight: FontWeight.bold),
               )
             ],
           ),
